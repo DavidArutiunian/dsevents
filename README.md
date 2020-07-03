@@ -9,7 +9,7 @@
 Параметры программы:
 
 1. past <EventID>, выводит множество событий прошлого для указанного события;
-2. future <EveentID>, выводит множество событий будущего;
+2. future <EventID>, выводит множество событий будущего;
 3. concurrent <EventID>, выводит множество параллельных событий.
 
 Описание модели РС представляет собой JSON-файл следующей структуры:
@@ -37,15 +37,17 @@
 
 Файл model.json содержит пример описания модели распределённой системы (рис. 1).
 
-![alt Рисунок 1](https://github.com/vkuzn/dsevents/blob/master/diagram.gif?raw=true)
+![diagram](https://github.com/vkuzn/dsevents/blob/master/diagram.gif?raw=true)
 
 Запуск программы
 
-\$ dsevents past e2_3 < model.json
-e1_1 e1_2 e2_1 e2_2
+```bash
+$ dsevents past e2_3 < model.json
+>> e1_1 e1_2 e2_1 e2_2
 
-\$ dsevents future e2_3 < model.json
-e2_4 e1_4
+$ dsevents future e2_3 < model.json
+>> e2_4 e1_4
 
-\$ dsevents concurrent e2_3 < model.json
-e3_1 e2_2 e1_3
+$ dsevents concurrent e2_3 < model.json
+>> e3_1 e2_2 e1_3
+```
